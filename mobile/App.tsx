@@ -4,10 +4,12 @@ import {
 	useFonts
 } from '@expo-google-fonts/karla'
 import { NativeBaseProvider } from 'native-base'
-import { StatusBar, Text } from 'react-native'
+import { StatusBar } from 'react-native'
+
+import { THEME } from './src/theme'
 
 import { Loading } from '@components/Loading'
-import { THEME } from './src/theme'
+import { SignIn } from '@screens/SignIn'
 
 export default function App() {
 	const [fontsLoaded] = useFonts({ Karla_400Regular, Karla_700Bold })
@@ -18,11 +20,7 @@ export default function App() {
 				backgroundColor="transparent"
 				translucent
 			/>
-			{fontsLoaded ? (
-				<Text>Hello World</Text>
-			) : (
-				<Loading spinnerColor="blue.700" />
-			)}
+			{fontsLoaded ? <SignIn /> : <Loading spinnerColor="blue.700" />}
 		</NativeBaseProvider>
 	)
 }
