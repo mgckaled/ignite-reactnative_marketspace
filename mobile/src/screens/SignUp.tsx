@@ -32,8 +32,8 @@ export function SignUp() {
 	return (
 		<Stack safeArea>
 			<ScrollView showsVerticalScrollIndicator={false}>
-				<Stack bg="gray.100">
-					<VStack mx={10} mt={12} mb={20} justifyContent="center">
+				<Stack bg="gray.200">
+					<VStack mx={10} mt={10} mb={20} justifyContent="center">
 						<Center>
 							<LogoSvg width={90} height={90} />
 							<Text fontFamily="heading" fontSize="lg">
@@ -50,11 +50,10 @@ export function SignUp() {
 								vender seus produtos
 							</Text>
 
-							<Input focusBc="gray.200" placeholder="Nome" />
-							<Input focusBc="gray.200" placeholder="Email" />
-							<Input focusBc="gray.200" placeholder="Telefone" />
+							<Input placeholder="Nome" />
+							<Input placeholder="Email" />
+							<Input placeholder="Telefone" />
 							<Input
-								focusBc="gray.200"
 								placeholder="Senha"
 								type={showPassword ? 'text' : 'password'}
 								InputRightElement={
@@ -71,7 +70,6 @@ export function SignUp() {
 								}
 							/>
 							<Input
-								focusBc="gray.200"
 								placeholder="Confirmar senha"
 								type={showConfirmPassword ? 'text' : 'password'}
 								InputRightElement={

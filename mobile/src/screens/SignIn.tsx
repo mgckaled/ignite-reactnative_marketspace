@@ -43,9 +43,8 @@ export function SignIn() {
 						>
 							Acesse sua conta
 						</Text>
-						<Input focusBc="gray.100" placeholder="Email" />
+						<Input placeholder="Email" />
 						<Input
-							focusBc="gray.100"
 							placeholder="Senha"
 							type={showPassword ? 'text' : 'password'}
 							InputRightElement={

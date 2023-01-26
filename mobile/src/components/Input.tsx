@@ -1,10 +1,6 @@
 import { IInputProps, Input as NativeBaseInput, useTheme } from 'native-base'
 
-type Props = IInputProps & {
-	focusBc: 'gray.100' | 'gray.200'
-}
-
-export function Input({ focusBc, ...rest }: Props) {
+export function Input({ ...rest }: IInputProps) {
 	const theme = useTheme()
 
 	return (
@@ -23,9 +19,9 @@ export function Input({ focusBc, ...rest }: Props) {
 			cursorColor="gray.600"
 			selectionColor="gray.600"
 			_focus={{
-				backgroundColor: focusBc,
+				backgroundColor: 'gray.100',
 				borderWidth: 1,
-				borderColor: 'gray.600'
+				borderColor: 'gray.700'
 			}}
 			{...rest}
 		/>
