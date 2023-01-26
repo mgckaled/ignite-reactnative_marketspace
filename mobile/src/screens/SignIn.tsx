@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/native'
 import {
 	Center,
 	Image,
@@ -12,6 +13,8 @@ import { useState } from 'react'
 
 import logoImgPng from '@assets/logo.png'
 
+import { AuthNavigatorRoutesProps } from '@routes/auth.routes'
+
 import { Button } from '@components/Button'
 import { Input } from '@components/Input'
 
@@ -20,9 +23,16 @@ export function SignIn() {
 	const [showPassword, setShowPassword] = useState(false)
 	const THEME = useTheme()
 
+	// stack navigation
+	const navigation = useNavigation<AuthNavigatorRoutesProps>()
+
+	function handleNewAccount() {
+		navigation.navigate('signUp')
+	}
+
 	return (
-		<Stack flex={1} safeArea>
-			<Stack bg="gray.100" roundedBottom={32}>
+		<Stack safeArea>
+			<Stack bg="gray.200" roundedBottom={32}>
 				<VStack mx={10} mt={16} mb={20} justifyContent="center">
 					<Center>
 						<Image
@@ -46,8 +56,9 @@ export function SignIn() {
 						>
 							Acesse sua conta
 						</Text>
-						<Input placeholder="Email" />
+						<Input focusBc="gray.100" placeholder="Email" />
 						<Input
+							focusBc="gray.100"
 							placeholder="Senha"
 							type={showPassword ? 'text' : 'password'}
 							InputRightElement={
@@ -83,6 +94,7 @@ export function SignIn() {
 						bgColor="gray.300"
 						_borderColor="gray.400"
 						textColor="gray.600"
+						onPress={handleNewAccount}
 					/>
 				</Center>
 			</VStack>

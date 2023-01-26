@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/native'
 import {
 	Center,
 	Image,
@@ -22,12 +23,16 @@ export function SignUp() {
 	const [showConfirmPassword, setShowConfirmPassword] = useState(false)
 	const THEME = useTheme()
 
+	// stack navigation
+	const navigation = useNavigation()
+
+	function handleGoBack() {
+		navigation.goBack()
+	}
+
 	return (
-		<Stack flex={1} safeArea>
-			<ScrollView
-				contentContainerStyle={{ flexGrow: 1 }}
-				showsVerticalScrollIndicator={false}
-			>
+		<Stack safeArea>
+			<ScrollView showsVerticalScrollIndicator={false}>
 				<Stack bg="gray.100">
 					<VStack mx={10} mt={12} mb={20} justifyContent="center">
 						<Center>
@@ -51,10 +56,11 @@ export function SignUp() {
 								vender seus produtos
 							</Text>
 
-							<Input placeholder="Nome" />
-							<Input placeholder="Email" />
-							<Input placeholder="Telefone" />
+							<Input focusBc="gray.200" placeholder="Nome" />
+							<Input focusBc="gray.200" placeholder="Email" />
+							<Input focusBc="gray.200" placeholder="Telefone" />
 							<Input
+								focusBc="gray.200"
 								placeholder="Senha"
 								type={showPassword ? 'text' : 'password'}
 								InputRightElement={
@@ -71,6 +77,7 @@ export function SignUp() {
 								}
 							/>
 							<Input
+								focusBc="gray.200"
 								placeholder="Confirmar senha"
 								type={showConfirmPassword ? 'text' : 'password'}
 								InputRightElement={
@@ -109,6 +116,7 @@ export function SignUp() {
 								bgColor="gray.300"
 								_borderColor="gray.400"
 								textColor="gray.600"
+								onPress={handleGoBack}
 							/>
 						</Center>
 					</VStack>
