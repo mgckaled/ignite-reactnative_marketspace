@@ -1,6 +1,7 @@
 import { useNavigation } from '@react-navigation/native'
 import {
 	Center,
+	HStack,
 	Pressable,
 	ScrollView,
 	Stack,
@@ -8,13 +9,16 @@ import {
 	VStack,
 	useTheme
 } from 'native-base'
-import { Eye, EyeSlash } from 'phosphor-react-native'
+import { Eye, EyeSlash, PencilSimpleLine } from 'phosphor-react-native'
 import { useState } from 'react'
 
+import UserPhotoDefault from '@assets/UserPhotoDefault.png'
 import LogoSvg from '@assets/logo.svg'
 
 import { Button } from '@components/Button'
 import { Input } from '@components/Input'
+import { UserPhoto } from '@components/UserPhoto'
+import { TouchableOpacity } from 'react-native'
 
 export function SignUp() {
 	// Input Icon - Eye EyeSlash
@@ -33,7 +37,7 @@ export function SignUp() {
 		<Stack safeArea>
 			<ScrollView showsVerticalScrollIndicator={false}>
 				<Stack bg="gray.200">
-					<VStack mx={10} mt={10} mb={20} justifyContent="center">
+					<VStack mx={10} mt={10} mb={32} justifyContent="center">
 						<Center>
 							<LogoSvg width={90} height={90} />
 							<Text fontFamily="heading" fontSize="lg">
@@ -49,6 +53,33 @@ export function SignUp() {
 								Crie sua conta e use o espaço para comprar itens variados e
 								vender seus produtos
 							</Text>
+							<HStack flex={1} alignItems="center" justifyContent="center">
+								<UserPhoto
+									mt={2}
+									mb={6}
+									size={24}
+									source={UserPhotoDefault}
+									alt="foto do usuário"
+								/>
+								<TouchableOpacity>
+									<Pressable
+										rounded="full"
+										h={10}
+										w={10}
+										mb={-10}
+										ml={-8}
+										bg="blue.500"
+										justifyContent="center"
+										alignItems="center"
+										_pressed={{ opacity: 0.9 }}
+									>
+										<PencilSimpleLine
+											size={20}
+											color={THEME.colors.gray[200]}
+										/>
+									</Pressable>
+								</TouchableOpacity>
+							</HStack>
 
 							<Input placeholder="Nome" />
 							<Input placeholder="Email" />

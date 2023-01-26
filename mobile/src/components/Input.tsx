@@ -9,8 +9,8 @@ export function Input({ ...rest }: IInputProps) {
 			h={12}
 			px={4}
 			borderWidth={1}
-			borderColor="gray.400"
-			borderRadius="md"
+			borderColor="gray.300"
+			borderRadius="lg"
 			fontSize="md"
 			color="gray.600"
 			fontFamily="body"
@@ -20,8 +20,7 @@ export function Input({ ...rest }: IInputProps) {
 			selectionColor="gray.600"
 			_focus={{
 				backgroundColor: 'gray.100',
-				borderWidth: 1,
-				borderColor: 'gray.700'
+				borderColor: 'gray.500'
 			}}
 			{...rest}
 		/>
