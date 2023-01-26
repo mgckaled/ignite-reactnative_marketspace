@@ -1,17 +1,9 @@
 import { useNavigation } from '@react-navigation/native'
-import {
-	Center,
-	Image,
-	Pressable,
-	Stack,
-	Text,
-	VStack,
-	useTheme
-} from 'native-base'
+import { Center, Pressable, Stack, Text, VStack, useTheme } from 'native-base'
 import { Eye, EyeSlash } from 'phosphor-react-native'
 import { useState } from 'react'
 
-import logoImgPng from '@assets/logo.png'
+import LogoSvg from '@assets/logo.svg'
 
 import { AuthNavigatorRoutesProps } from '@routes/auth.routes'
 
@@ -35,12 +27,7 @@ export function SignIn() {
 			<Stack bg="gray.200" roundedBottom={32}>
 				<VStack mx={10} mt={16} mb={20} justifyContent="center">
 					<Center>
-						<Image
-							source={logoImgPng}
-							alt="logo do app"
-							resizeMode="contain"
-							size={32}
-						/>
+						<LogoSvg width={132} height={132} />
 						<Text fontFamily="heading" fontSize="2xl">
 							marketspace
 						</Text>

@@ -1,7 +1,6 @@
 import { useNavigation } from '@react-navigation/native'
 import {
 	Center,
-	Image,
 	Pressable,
 	ScrollView,
 	Stack,
@@ -12,7 +11,7 @@ import {
 import { Eye, EyeSlash } from 'phosphor-react-native'
 import { useState } from 'react'
 
-import logoImgPng from '@assets/logo.png'
+import LogoSvg from '@assets/logo.svg'
 
 import { Button } from '@components/Button'
 import { Input } from '@components/Input'
@@ -36,12 +35,7 @@ export function SignUp() {
 				<Stack bg="gray.100">
 					<VStack mx={10} mt={12} mb={20} justifyContent="center">
 						<Center>
-							<Image
-								source={logoImgPng}
-								alt="logo do app"
-								resizeMode="contain"
-								size={20}
-							/>
+							<LogoSvg width={90} height={90} />
 							<Text fontFamily="heading" fontSize="lg">
 								Boas vindas!
 							</Text>
