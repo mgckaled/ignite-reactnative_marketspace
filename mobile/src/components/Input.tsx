@@ -8,6 +8,7 @@ export function Input({ ...rest }: IInputProps) {
 			bg="gray.100"
 			h={12}
 			px={4}
+			mt={4}
 			borderWidth={1}
 			borderColor="gray.400"
 			borderRadius="md"

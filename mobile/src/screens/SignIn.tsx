@@ -46,9 +46,8 @@ export function SignIn() {
 						>
 							Acesse sua conta
 						</Text>
-						<Input mb={4} placeholder="Email" />
+						<Input placeholder="Email" />
 						<Input
-							mb={4}
 							placeholder="Senha"
 							type={showPassword ? 'text' : 'password'}
 							InputRightElement={
