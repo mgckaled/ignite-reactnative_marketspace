@@ -3,11 +3,9 @@ import { Stack, Text, VStack } from 'native-base'
 
 import { AdBox } from '@components/AdBox'
 import { HomeHeader } from '@components/HomeHeader'
+import { SearchInput } from '@components/SearchInput'
 
-import { Input } from '@components/Input'
 import { AppNavigatorRoutesProps } from '@routes/app.routes'
-import { MagnifyingGlass, Sliders } from 'phosphor-react-native'
-import { Pressable } from 'react-native'
 
 export function Home() {
 	// navigation
@@ -28,19 +26,7 @@ export function Home() {
 				<Text ml={1} mt={7} fontFamily="body" fontSize="sm" color="gray.400">
 					Compre produtos variados
 				</Text>
-				<Input
-					mt={2}
-					InputRightElement={
-						<Pressable style={{ marginRight: 15 }}>
-							<Sliders size={24} />
-						</Pressable>
-					}
-					InputLeftElement={
-						<Pressable style={{ marginLeft: 15 }}>
-							<MagnifyingGlass size={24} />
-						</Pressable>
-					}
-				/>
+				<SearchInput />
 			</VStack>
 		</Stack>
 	)

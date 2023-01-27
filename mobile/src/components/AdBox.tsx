@@ -27,10 +27,10 @@ export function AdBox({ ...rest }: IPressableProps) {
 			<HStack flex={1} justifyContent="space-between" alignItems="center">
 				<Tag size={24} color={colors.blue[500]} />
 				<VStack mx={4}>
-					<Heading fontFamily="heading" fontSize="lg">
+					<Heading fontFamily="heading" fontSize="lg" color="gray.500">
 						4
 					</Heading>
-					<Text fontFamily="body" fontSize="xs">
+					<Text fontFamily="body" fontSize="xs" color="gray.500">
 						anúncios ativos
 					</Text>
 				</VStack>
