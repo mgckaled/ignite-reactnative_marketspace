@@ -31,5 +31,9 @@ export const THEME = extendTheme({
 		lg: 20,
 		xl: 24,
 		'2xl': 32
+	},
+	sizes: {
+		14: 56,
+		33: 148
 	}
 })
