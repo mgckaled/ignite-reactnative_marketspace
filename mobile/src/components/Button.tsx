@@ -23,7 +23,7 @@ export function Button({
 			bg={bgColor}
 			borderWidth={1}
 			borderColor={_borderColor}
-			rounded="md"
+			rounded="lg"
 			justifyItems="center"
 			_pressed={{
 				opacity: 0.9,
