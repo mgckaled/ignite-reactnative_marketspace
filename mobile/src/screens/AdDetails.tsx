@@ -12,9 +12,10 @@ export function AdDetails() {
 	}
 
 	return (
-		<Stack safeArea>
+		<Stack bg="gray.200" safeArea>
 			<AdHeader
 				title=""
+				bgColor="gray.200"
 				hasArrowIcon={true}
 				onPressArrow={handleGoBack}
 			></AdHeader>

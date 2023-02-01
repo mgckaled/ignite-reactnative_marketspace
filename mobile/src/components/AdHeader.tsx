@@ -15,6 +15,7 @@ import {
 
 type Props = IPressableProps & {
 	title: string
+	bgColor: string
 	hasArrowIcon?: boolean
 	hasAddIcon?: boolean
 	hasEditIcon?: boolean
@@ -27,6 +28,7 @@ type Props = IPressableProps & {
 
 export function AdHeader({
 	title,
+	bgColor,
 	hasArrowIcon = false,
 	hasAddIcon = false,
 	hasEditIcon = false,
@@ -42,28 +44,37 @@ export function AdHeader({
 	return (
 		<HStack
 			pt={8}
-			mx={10}
+			px={10}
+			pb={4}
 			bg="gray.100"
 			alignItems="center"
-			justifyContent="space-around"
+			justifyContent="space-between"
+			backgroundColor={bgColor}
 		>
 			{hasArrowIcon === true ? (
 				<Pressable _pressed={{ opacity: 0.5 }} onPress={onPressArrow} {...rest}>
 					<ArrowLeft size={24} color={colors.gray[700]} />
 				</Pressable>
 			) : (
-				<Stack></Stack>
+				<Pressable ml={10} {...rest}>
+					<ArrowLeft size={24} color={bgColor} />
+				</Pressable>
 			)}
 
-			<Heading mx={24} color="gray.700" fontSize="lg" fontFamily="heading">
+			<Heading mx={6} color="gray.700" fontSize="lg" fontFamily="heading">
 				{title}
 			</Heading>
 			{hasAddIcon === true ? (
-				<Pressable _pressed={{ opacity: 0.5 }} onPress={onPressAdd} {...rest}>
+				<Pressable
+					ml={10}
+					_pressed={{ opacity: 0.5 }}
+					onPress={onPressAdd}
+					{...rest}
+				>
 					<Plus size={24} color={colors.gray[700]} />
 				</Pressable>
 			) : (
-				<Stack ml={7}></Stack>
+				<Pressable></Pressable>
 			)}
 			{hasEditIcon === true ? (
 				<Pressable _pressed={{ opacity: 0.5 }} onPress={onPressEdit} {...rest}>
