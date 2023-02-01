@@ -7,6 +7,7 @@ import { House, Tag, User } from 'phosphor-react-native'
 import { Platform } from 'react-native'
 
 import { Ad } from '@screens/Ad'
+import { AdDetails } from '@screens/AdDetails'
 import { Home } from '@screens/Home'
 import { Profile } from '@screens/Profile'
 
@@ -14,6 +15,7 @@ type AppRoutes = {
 	home: undefined
 	ad: undefined
 	profile: undefined
+	details: undefined
 }
 
 export type AppNavigatorRoutesProps = BottomTabNavigationProp<AppRoutes>
@@ -61,6 +63,12 @@ export function AppRoutes() {
 				options={{
 					tabBarIcon: ({ color }) => <User size={sizes[6]} color={color} />
 				}}
+			/>
+
+			<Screen
+				name="details"
+				component={AdDetails}
+				options={{ tabBarButton: () => null }}
 			/>
 		</Navigator>
 	)
