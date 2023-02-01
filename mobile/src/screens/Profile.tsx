@@ -1,9 +1,16 @@
-import { Stack, Text } from 'native-base'
+import { AdHeader } from '@components/AdHeader'
+import { Stack, useTheme } from 'native-base'
 
 export function Profile() {
+	const { colors } = useTheme()
+
 	return (
-		<Stack flex={1} alignItems="center" justifyContent="center">
-			<Text>Profile</Text>
+		<Stack bg="gray.200" safeArea>
+			<AdHeader
+				title="   Perfil   "
+				bgColor={colors.gray[200]}
+				hasSignOutIcon={true}
+			></AdHeader>
 		</Stack>
 	)
 }

@@ -44,29 +44,34 @@ export function AdHeader({
 	return (
 		<HStack
 			pt={8}
-			px={10}
+			px={6}
 			pb={4}
 			bg="gray.100"
 			alignItems="center"
-			justifyContent="space-between"
+			justifyContent="space-around"
 			backgroundColor={bgColor}
 		>
 			{hasArrowIcon === true ? (
-				<Pressable _pressed={{ opacity: 0.5 }} onPress={onPressArrow} {...rest}>
+				<Pressable
+					pr={12}
+					_pressed={{ opacity: 0.5 }}
+					onPress={onPressArrow}
+					{...rest}
+				>
 					<ArrowLeft size={24} color={colors.gray[700]} />
 				</Pressable>
 			) : (
-				<Pressable ml={10} {...rest}>
+				<Pressable pl={10} {...rest}>
 					<ArrowLeft size={24} color={bgColor} />
 				</Pressable>
 			)}
 
-			<Heading mx={6} color="gray.700" fontSize="lg" fontFamily="heading">
+			<Heading px={10} color="gray.700" fontSize="lg" fontFamily="heading">
 				{title}
 			</Heading>
 			{hasAddIcon === true ? (
 				<Pressable
-					ml={10}
+					pl={10}
 					_pressed={{ opacity: 0.5 }}
 					onPress={onPressAdd}
 					{...rest}
@@ -81,7 +86,7 @@ export function AdHeader({
 					<PencilSimpleLine size={24} color={colors.gray[700]} />
 				</Pressable>
 			) : (
-				<Stack ml={7}></Stack>
+				<Stack></Stack>
 			)}
 			{hasSignOutIcon === true ? (
 				<Pressable
@@ -92,7 +97,7 @@ export function AdHeader({
 					<SignOut size={24} color={colors.red[400]} />
 				</Pressable>
 			) : (
-				<Stack ml={7}></Stack>
+				<Stack></Stack>
 			)}
 		</HStack>
 	)
