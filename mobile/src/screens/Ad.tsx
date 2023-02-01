@@ -1,9 +1,16 @@
-import { Stack, Text } from 'native-base'
+import { AdHeader } from '@components/AdHeader'
+import { Stack, useTheme } from 'native-base'
 
 export function Ad() {
+	const { colors } = useTheme()
+
 	return (
-		<Stack flex={1} alignItems="center" justifyContent="center">
-			<Text>Ad</Text>
+		<Stack bg="gray.200" safeArea>
+			<AdHeader
+				title="Meus Anúncios"
+				bgColor={colors.gray[200]}
+				hasAddIcon={true}
+			></AdHeader>
 		</Stack>
 	)
 }
