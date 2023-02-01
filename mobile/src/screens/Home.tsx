@@ -3,6 +3,7 @@ import { Stack, Text, VStack } from 'native-base'
 
 import { AdBox } from '@components/AdBox'
 import { HomeHeader } from '@components/HomeHeader'
+import { ProductCard } from '@components/ProductCard'
 import { SearchInput } from '@components/SearchInput'
 
 import { AppNavigatorRoutesProps } from '@routes/app.routes'
@@ -27,6 +28,8 @@ export function Home() {
 					Compre produtos variados
 				</Text>
 				<SearchInput />
+				{/* <Products data={products} /> */}
+				<ProductCard />
 			</VStack>
 		</Stack>
 	)
