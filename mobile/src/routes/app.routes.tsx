@@ -11,11 +11,11 @@ import { AdDetails } from '@screens/AdDetails'
 import { Home } from '@screens/Home'
 import { Profile } from '@screens/Profile'
 
-type AppRoutes = {
+export type AppRoutes = {
 	home: undefined
 	ad: undefined
 	profile: undefined
-	details: undefined
+	details: { productId: string }
 }
 
 export type AppNavigatorRoutesProps = BottomTabNavigationProp<AppRoutes>
